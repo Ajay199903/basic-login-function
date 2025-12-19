@@ -249,6 +249,47 @@ This project is intended for:
 
 ---
 
+## 🖼 Screenshots
+
+以下は本アプリの画面イメージ例です（※実装後にスクリーンショットを差し替えてください）。
+
+- ログイン画面（再生可能エネルギーをテーマにしたデザイン）
+- 新規登録画面（ログイン画面と切り替え）
+- ホーム / ダッシュボード画面
+  - Solar（太陽光）カード
+  - Wind（風力）カード
+  - Battery（蓄電池）カード
+
+---
+
+## 🤖 Prompts used to generate Frontend & README
+
+このプロジェクトでは、以下のようなプロンプトを使用して ChatGPT に支援してもらいました。
+
+### Prompt 1: Frontend Generation
+
+**English**
+
+> "Create a beautiful Flutter Web login and register page with Japanese UI text. The theme should be related to renewable energy. Include authentication, auto-login on refresh, dashboard cards (Solar / Wind / Battery), form validation, and logout functionality."
+
+**日本語**
+
+> 「日本語UIテキストを使用した、美しいFlutter Webのログイン・新規登録画面を作成してください。再生可能エネルギーをテーマにし、認証機能、リロード時の自動ログイン、Solar / Wind / Battery のダッシュボードカード、フォームバリデーション、ログアウト機能を含めてください。」
+
+---
+
+### Prompt 2: README Generation
+
+**English**
+
+> "Create a clear and beginner-friendly README.md explaining how to run a Flutter Web frontend and Flask backend locally, including virtual environment setup, database creation, and demo instructions."
+
+**日本語**
+
+> 「Flutter WebのフロントエンドとFlaskバックエンドをローカル環境で実行する方法について、仮想環境のセットアップ、データベース作成、デモ手順を含めた、初心者にも分かりやすいREADME.mdを作成してください。」
+
+---
+
 ## 📄 License
 
 Free to use for learning and demo purposes.
