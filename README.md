@@ -254,11 +254,13 @@ This project is intended for:
 以下は本アプリの画面イメージ例です（※実装後にスクリーンショットを差し替えてください）。
 
 - ログイン画面（再生可能エネルギーをテーマにしたデザイン）
+<img width="605" height="524" alt="Login" src="https://github.com/user-attachments/assets/76281748-9337-4713-b622-79489d8994e5" />
+
 - 新規登録画面（ログイン画面と切り替え）
+<img width="512" height="521" alt="Register" src="https://github.com/user-attachments/assets/91160c16-e409-4b40-b636-f919d0ca7129" />
+
 - ホーム / ダッシュボード画面
-  - Solar（太陽光）カード
-  - Wind（風力）カード
-  - Battery（蓄電池）カード
+<img width="1279" height="473" alt="After Login" src="https://github.com/user-attachments/assets/9825747d-2ee9-4a86-beb4-ac93f11f2c9f" />
 
 ---
 
