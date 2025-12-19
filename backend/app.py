@@ -32,7 +32,8 @@ def init_db():
         print('データベースが初期化されました!')
 
 def get_db():
-    return sqlite3.connect(DB)
+    conn = sqlite3.connect(DB, timeout=10, check_same_thread=False)
+    return conn
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -53,6 +54,8 @@ def register():
         return jsonify({'message': '登録完了!'}), 201
     except sqlite3.IntegrityError:
         return jsonify({'error': '既に登録されています!'}), 409
+    finally:
+        conn.close()
 
 
 @app.route('/login', methods=['POST'])
@@ -61,16 +64,19 @@ def login():
     userName = data.get('userName')
     userPassword = data.get('userPassword')
 
-    conn = get_db()
-    cur = conn.cursor()
-    cur.execute('SELECT password FROM users WHERE name=?', (userName))
-    row = cur.fetchone()
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        cur.execute('SELECT password FROM users WHERE name=?', (userName,))
+        row = cur.fetchone()
 
-    if row and check_password_hash(row[0], userPassword):
-        token = create_access_token(identity=userName)
-        return jsonify({'access_token': token}), 200
+        if row and check_password_hash(row[0], userPassword):
+            token = create_access_token(identity=userName)
+            return jsonify({'access_token': token}), 200
 
-    return jsonify({'error': '名前またはパスワードが違います!'}), 401
+        return jsonify({'error': '名前またはパスワードが違います!'}), 401
+    finally:
+        conn.close()
 
 
 @app.route('/profile', methods=['GET'])

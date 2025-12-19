@@ -1,3 +1,14 @@
-./backend/venv/
-./backend/*.db
+backend/venv/
+backend/users.db
 .vs/
+frontend/analysis_options.yaml
+frontend/android/
+frontend/frontend.iml
+frontend/ios/
+frontend/linux/
+frontend/macos/
+frontend/pubspec.lock
+frontend/test/
+frontend/windows/
+frontend/.metadata
+frontend/.gitignore
