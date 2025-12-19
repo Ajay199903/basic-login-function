@@ -17,7 +17,6 @@ project-root/
 │
 ├── backend/
 │   ├── app.py            # Flask API (login/signup)
-│   ├── create_db.py      # Database creation script
 │   ├── requirements.txt # Python dependencies
 │   └── venv/             # Python virtual environment (not committed)
 │
@@ -33,8 +32,8 @@ project-root/
 
 ## 🧩 Features
 
-- User registration (サインアップ)
-- User login (サインイン)
+- User registration (登録)
+- User login (ログイン)
 - Password hashing
 - JWT-based authentication
 - Flutter Web UI (Japanese text)
@@ -86,17 +85,7 @@ pip install -r requirements.txt
 
 ---
 
-#### Step 3: Create the database
-
-```bash
-python create_db.py
-```
-
-This will create a local SQLite database file.
-
----
-
-#### Step 4: Run the backend server
+#### Step 3: Run the backend server
 
 ```bash
 python app.py
@@ -141,20 +130,125 @@ pip install -r requirements.txt
 
 ---
 
-#### ステップ3：データベース作成
-
-```bash
-python create_db.py
-```
-
-SQLiteデータベースが作成されます。
-
----
-
-#### ステップ4：バックエンド起動
+#### ステップ3：バックエンド起動
 
 ```bash
 python app.py
 ```
 
 ---
+
+## 2️⃣ Frontend Setup (Flutter Web)
+
+### 🇬🇧 English
+
+#### Step 1: Enable Flutter Web (once)
+
+```bash
+flutter config --enable-web
+flutter doctor
+```
+
+---
+
+#### Step 2: Install dependencies
+
+```bash
+cd frontend
+flutter pub get
+```
+
+---
+
+#### Step 3: Run Flutter Web app
+
+```bash
+flutter run -d chrome
+```
+
+The app will open in your browser.
+
+---
+
+### 🇯🇵 日本語
+
+#### ステップ1：Flutter Webを有効化（一度だけ）
+
+```bash
+flutter config --enable-web
+flutter doctor
+```
+
+---
+
+#### ステップ2：依存関係の取得
+
+```bash
+cd frontend
+flutter pub get
+```
+
+---
+
+#### ステップ3：Webアプリ起動
+
+```bash
+flutter run -d chrome
+```
+
+ブラウザでアプリが起動します。
+
+---
+
+## 🌐 API Endpoint Configuration
+
+Flutter Web uses:
+
+```dart
+http://localhost:5000
+```
+
+⚠ Do NOT use `10.0.2.2` (that is only for Android emulators).
+
+---
+
+## 🗣 UI Text (Japanese)
+
+- ログイン
+- 登録
+- 名前
+- パスワード
+
+---
+
+## 🧪 Demo Flow
+
+1. Start backend server
+2. Start Flutter Web frontend
+3. Register a new user (登録)
+4. Login with the same account (ログイン)
+5. JWT is returned from backend
+
+---
+
+## 🎯 Purpose
+
+This project is intended for:
+
+- Learning Flutter + Flask integration
+- Authentication demo
+- Interview or portfolio demo
+
+---
+
+## 📌 Notes
+
+- SQLite is used for simplicity
+- Not intended for production
+- Authentication logic can be extended easily
+
+---
+
+## 📄 License
+
+Free to use for learning and demo purposes.
